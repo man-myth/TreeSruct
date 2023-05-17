@@ -1,13 +1,16 @@
 public class main {
 
     public static int getDepth(Branch branch){
+
+        //base case
         if (branch == null) {
             return 0;
         }
+
         int maxChildDepth = 0;
         if (branch.getBranches() != null) {
             for (Branch child : branch.getBranches()) {
-                int childDepth = getDepth(child);
+                int childDepth = getDepth(child);       //recursion
                 maxChildDepth = Math.max(maxChildDepth, childDepth);
             }
         }
